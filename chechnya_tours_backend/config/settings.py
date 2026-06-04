@@ -1,25 +1,16 @@
 from pathlib import Path
 from datetime import timedelta
-
+    
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = "django-insecure-change-me"
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = [
-    '127.0.0.1',
-    'localhost',
-    '10.0.2.2',
-    'angmaR7.pythonanywhere.com',  # замени на точный домен из PythonAnywhere
-]
+ALLOWED_HOSTS = ['*']
 
-CSRF_TRUSTED_ORIGINS = [
-    'https://angmaR7.github.io',
-]
-
-CORS_ALLOWED_ORIGINS = [
-    'https://angmaR7.github.io',
-]
+CORS_ALLOW_ALL_ORIGINS = True
+# Если нужно передавать куки/токены авторизации, добавьте:
+CORS_ALLOW_CREDENTIALS = True
 
 INSTALLED_APPS = [
     "django.contrib.admin",
